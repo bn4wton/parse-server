@@ -1,0 +1,82 @@
+
+<html>
+  <head>
+	  
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>  
+	  
+	<!--<script type="text/javascript" src = "http://plutusfxdailynews.parseapp.com/JS/news.js"></script> -->
+	<script type="text/javascript" src = "./JS/video.js"></script>
+
+    <link rel="stylesheet" type="text/css" href = "http://plutusfxdailynews.parseapp.com/CSS/app.css">
+	
+    <script type="text/javascript">
+	  Parse.initialize("t7rsvA9T2JQ6UNXvrwzXI76hOCTfMnX9PSApoJ92", "v1IJD3uXn9IYVkcnCeudrR76LVOvg5zq6eadlJDg");
+    </script>
+	  
+    <title>PlutusFX Video Upload</title>
+	
+  </head>
+  
+  <body>
+<a href="./index.html"> << Back to Daily News </a> 
+	<form method="post"   onSubmit="Javascript:handleClick(subject,body,url,fullurl,approve,pushgroup)">
+		<div>
+       <a href="http:\\www.plutusfx.com">
+           <img src="http://www.plutusfx.com/site/wp-content/themes/websiteni-theme/images/plutus-fx-logo.gif" alt="PlutusFX" height="90" width="300"></a>
+            <img src="http://www.plutusfx.com/site/wp-content/uploads/2015/08/TipTV-Whits.png" alt="TipTv" align="Right">    
+  		<p>
+  	  	</div>
+	  	<div>
+	  		<h1>PlutusFX TipTv Video Update.</h1>
+		</div>
+		<div>
+			<label for="date"> Date: </label>
+			<input id="date" name='date' />
+			<script type="text/javascript">
+			   //document.getElementById("date").value = (new Date()).format("dd/m/yy");
+			   getDate(date);
+			</script>
+			
+		</div>
+		<div>
+        	<label for="subject">Subject : </label>
+			<input type ="text" id="subject" placeholder="Enter Headline for Story"/>
+		</div>
+        <div>
+        	<label for="url">URL : </label>
+			<input type ="text" id="url" onblur="correctURL(url)" placeholder="Enter URL as https://youtu.be/xxxxxxxxxxx"/>
+		</div>
+        <div>
+        	<label for="fullUrl">TipTVURL : </label>
+			<input type ="text" id="fullurl"  placeholder="Enter longform URL from TipTv -  http://www.tiptv.co.uk/archives/[story title]/"/>
+		</div>
+		<div>
+        	<label for="body">Description : </label>
+			<textarea id="body" placeholder="Enter main body of text"></textarea>
+            
+		</div>
+		<div>
+			<label>Destination</label>
+			<select name "Audience" id="pushgroup">
+				<option value="Test">Test</options>
+				<option value="Video" selected>Video</options>
+				<option value="News">News</options>
+			</select> &nbsp; (push notification destination)
+		</div>
+		<div>
+		    <label for="approve">Approve : </label>
+			<input type="checkbox" name="approve" id="approve" value="Check this box before submitting form" />
+		</div> 
+		<div class="button">
+        	<button type="submit"> Save to Parse </button>
+			&nbsp; Check Approve box when ready to publish
+            <!-- <button onclick="parsePage(url)">Parse Web Page</button> -->
+		</div>
+    </form>
+      <div class="btnBlock">
+                <button onclick="getSelectionBold()">Bold</button>
+                <button onclick="makePara">P</button>
+            </div>      
+  </body>
+</html>
